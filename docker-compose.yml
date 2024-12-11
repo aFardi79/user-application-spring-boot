@@ -13,6 +13,14 @@ services:
     networks:
       - spring-net
 
+  user-app:
+    container_name: user-app
+    networks:
+      - spring-net
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql-db
 
 
 networks:
