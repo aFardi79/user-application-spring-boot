@@ -1,0 +1,21 @@
+version: "1"
+
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql-db
+    environment:
+      MYSQL_DATABASE: userDb
+      MYSQL_ROOT_PASSWORD: salam
+      MYSQL_PASSWORD: salam
+    ports:
+      - "3306:3306"
+    networks:
+      - spring-net
+
+
+
+networks:
+  default:
+  spring-net:
+    driver: bridge
