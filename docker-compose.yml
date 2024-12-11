@@ -15,6 +15,7 @@ services:
 
   user-app:
     container_name: user-app
+    build: .
     networks:
       - spring-net
     ports:
