@@ -15,16 +15,21 @@ services:
 
   user-app:
     container_name: user-app
-    build: .
+    build:
+      context: .
     networks:
       - spring-net
     ports:
       - "8081:8081"
     depends_on:
       - mysql-db
+    environment:
+       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/userDb
+       SPRING_DATASOURCE_USERNAME: root
+       SPRING_DATASOURCE_PASSWORD: salam
+       SPRING_PROFILES_ACTIVE: docker
 
 
 networks:
-  default:
   spring-net:
     driver: bridge
