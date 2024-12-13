@@ -31,5 +31,7 @@ services:
 
 
 networks:
+  default :
   spring-net:
+    name : "spring-net"
     driver: bridge
